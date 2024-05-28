@@ -18,7 +18,7 @@
 
 ## Supported Architectures
 
-Simply pulling `ghcr.io/muchobien/pocketbase:latest` should retrieve the correct image for your arch.
+Simply pulling `coralhl/pocketbase:latest` should retrieve the correct image for your arch.
 
 The architectures supported by this image are:
 
@@ -53,7 +53,7 @@ Here are some example snippets to help you get started creating a container.
 version: "3.7"
 services:
   pocketbase:
-    image: ghcr.io/muchobien/pocketbase:latest
+    image: coralhl/pocketbase:latest
     container_name: pocketbase
     restart: unless-stopped
     command:
@@ -85,7 +85,7 @@ docker run -d \
   -v /path/to/public:/pb_public `#optional` \
   -v /path/to/hooks:/pb_hooks `#optional` \
   --restart unless-stopped \
-  ghcr.io/muchobien/pocketbase:latest \
+  coralhl/pocketbase:latest \
   --encryptionEnv ENCRYPTION `#optional`
 ```
 

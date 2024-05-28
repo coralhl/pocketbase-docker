@@ -12,7 +12,12 @@ RUN wget https://github.com/pocketbase/pocketbase/releases/download/v${VERSION}/
     && chmod +x /pocketbase
 
 FROM alpine:3
-RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+
+ENV TZ=Europe/Moscow
+
+RUN apk update && \
+    apk add --no-cache bash bash-completion ca-certificates tzdata && \
+    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 EXPOSE 8090
 

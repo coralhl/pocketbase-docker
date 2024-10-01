@@ -1,6 +1,6 @@
 steps:
   build:
-    image: woodpeckerci/plugin-docker-buildx
+    image: coralhl/woodpecker-buildx-plugin
     settings:
       build_args:
         - VERSION=0.22.12
